@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegación</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    
+    <div class="background"></div>
+    <div class="content">
+        
+    
+  <header>
+    <h1>Comercio Electrónico</h1>
+</header>
+<section class="Barra_de_navegacion">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+</section>
+<div class="container">
+    <div class="producto 1" id="producto 1">
+        <img src="Producto 1.jpeg" alt="Producto 1">
+        <h2>Galaxy A70</h2>
+        <p>Celular Sansung Galaxy A70 128GB Branco Bom </p>
+        <button onclick="addToCart('Producto 1')"> Añadir al Carrito</button>
+    </div>
+    <div class="producto 2" id="producto 2">
+        <img src="Producto 2.jpeg" alt="Producto 2">
+        <h2>Galay A14</h2>
+        <p>Sansung Galaxy A14 128GB/4</p>
+        <button onclick="addToCart('Producto 2')">Añadir al carrito</button>
+    </div>
+    <div class="producto 3" id="producto 3">
+        <img src="Producto 3.jpeg" alt="Producto 3">
+        <h2>GALAXY A55 5G</h2>
+        <p>Sansung Galaxy A55 5G 128/256GB </p>
+        <button onclick="addToCart('Producto 3')">Añadir al carrito</button>
+    </div>
+    <div class="producto 4" id="producto 4">
+        <img src="Producto 3.jpeg" alt="Producto 4">
+        <h2>Ga</h2>
+        <p>Sansung A15 256GB Azul </p>
+        <button onclick="addToCart('Producto 3')">Añadir al carrito</button>
+    </div>
+
+    <div id="Carrito">
+        <h2>Carrito de Compra</h2>
+        <ul id="cart-items"></ul>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+</div>
+
+<script>
+    let cartItems = [];
+
+    function addToCart(productName) {
+        cartItems.push(productName);
+        renderCart();
+    }
+
+    function renderCart() {
+        const cartItemsElement = document.getElementById('cart-items');
+        cartItemsElement.innerHTML = '';
+        cartItems.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            cartItemsElement.appendChild(li);
+        });
+    }
+
+    function checkout() {
+        alert('Revision completada! gracias por la compra! .');
+        cartItems = [];
+        renderCart();
+    }
+</script>
+</div>
+</body>
+</html>
